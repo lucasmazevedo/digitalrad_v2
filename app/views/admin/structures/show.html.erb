@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @structure.title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @structure.subtitle %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @structure.photo %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @structure.status %>
+</p>
+
+<%= link_to 'Edit', edit_structure_path(@structure) %> |
+<%= link_to 'Back', structures_path %>

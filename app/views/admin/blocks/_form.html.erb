@@ -1,0 +1,23 @@
+<%= simple_form_for([:admin, @block], wrapper: "horizontal_form", :html=> { class: 'form-horizontal form-label-left' }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <%= f.input :page_id, collection: Page.order(:created_at) %>
+
+  <%= f.input :title, placeholder: "Titulo" %>
+  <%= f.input :content, placeholder: "Conteúdo", :input_html => {:rows => 8, :class => "tinymce"} %>
+  <%= f.input :position, collection: Block.positions.keys,
+            :selected => Block.positions.keys[@block[:position].to_i],
+            input_html: { autocomplete: 'off' },
+            label_method: lambda {|k| k.humanize} %>
+
+<div class="ln_solid"></div>
+  <div class="form-group">
+    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+      <%= link_to 'Cancel', admin_blocks_path, class: "btn btn-primary" %>
+      <%= f.button :submit, class: "btn btn-success" do %>
+        Enviar
+      <% end %>
+    </div>
+  </div>
+<% end %>

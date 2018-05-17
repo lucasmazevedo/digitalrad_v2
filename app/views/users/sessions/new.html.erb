@@ -1,0 +1,79 @@
+<script type="text/javascript">
+  document.body.className = 'rightsidebar';
+</script>
+<div id="subheader" class="sleft">
+  <div class="subheader-inner">
+    <div class="subdesc">
+      <h1 class="page-title">Central de Contratos</h1>
+    </div>
+    <div class="breadcrumb-main">
+      <div class="breadcrumb-wrap inner">
+        <div class="breadcrumbs">
+          <!-- Breadcrumb NavXT 5.7.1 -->
+          <span><%= link_to "Início", root_path, class: "home" %></span>
+          <span><i class="fa fa-angle-right"></i></span>
+          <span><span>Contratos</span></span>
+        </div><!-- .breadcrumbs-->
+      </div><!-- .breadcrumb-wrap-->
+    </div><!-- .breadcrumb-main-->
+  </div><!-- .subheader-inner-->
+</div><!-- #subheader-->
+
+		<div id="main">
+			<div id="primary" class="pagemid">
+				<div class="inner">
+          <% flash.each do |key, value| %>
+          <div class="at_message_box <%= key %> at-box-dashed at-box-large clearfix">
+            <span class="at_message_box_title"><%= value %></span>
+            <div class="at_message_box_content">
+              <span class="close">x</span>
+            </div>
+          </div>
+          <% end %>
+					<main class="content-area">
+						<div class="entry-content-wrapper clearfix">
+
+
+
+
+                  <h2>Digite seu email e senha</h2>
+                  <p>Caso não tenha senha, entre em contato</p>
+
+              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-inputs">
+                  <%= f.input :email, required: false, autofocus: true %>
+                  <%= f.input :password, required: false %>
+                  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                </div>
+
+                <div class="form-actions">
+                  <%= f.button :submit, "Log in" %>
+                </div>
+              <% end %>
+
+
+									</div><!-- .entry-content-wrapper -->
+					</main><!-- .content-area -->
+
+					<div id="sidebar">
+						<div class="content widget-area clearfix">
+							<aside id="nav_menu-8" class="widget-area widget_nav_menu">
+								<div class="menu-about-menu-container">
+									<ul id="menu-about-menu" class="menu">
+                    <li><%= link_to "Ver Contratos", contratos_path, style: "border-left: 3px solid #0A3B5A" %></li>
+                    <li><%= link_to "Enviar Contrato Assinado", enviar_contratos_path %></li>
+                    <li><%= link_to "Dúvidas?", root_path %></li>
+									</ul>
+								</div><!-- .menu-about-menu-container-->
+							</aside><!-- .widget-area-->
+
+							<aside id="text-12" class=" widget widget_text">
+								<div class="textwidget">
+									<a style="background-color:#0A3B5A; color:#ffffff;" class="btn  medium faicon lefticon  full rounded"><span class="btn-details"><span class="btn-icon"><i style=" color:#ffffff;" class="fa fa-lock"></i></span><span class="btn-text">Reportar Problema<span class="btn-sub-text"></span></span></span></a>
+								</div><!-- .textwidget-->
+							</aside><!-- .widget-->
+						</div><!-- .widget-area-->
+					</div><!-- #sidebar-->
+				</div><!-- .inner -->
+			</div><!-- .pagemid -->
+		</div><!-- #main -->

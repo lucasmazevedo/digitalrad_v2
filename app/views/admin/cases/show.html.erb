@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @case.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @case.content %>
+</p>
+  <% @case_attachments.each do |photos| %>
+  <%= image_tag(photos.photo_url) %><br>
+    <% end %>
+
+
+<p>
+  <strong>Status:</strong>
+  <%= @case.status %>
+</p>
+
+<%= link_to 'Edit', edit_admin_case_path(@case) %> |
+<%= link_to 'Back', admin_cases_path %>

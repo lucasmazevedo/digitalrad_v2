@@ -1,0 +1,26 @@
+<section id="featured_slider" class="clearfix">
+  <div class="slider_wrapper">
+    <div class="flexslider">
+    <ul class="slides">
+      <% @sliders.each do |slider| %>
+      <li>
+      <%= image_tag(slider.hero_image_url, alt: slider.title)  %>
+      <div class="flex-caption fs-left flex-caption-anim">
+        <div class="flex-caption-inner">
+          <div class="flex-title">
+          <h2><%= slider.title %></h2>
+          <div class="flex-content"><%= slider.subtitle %></div>
+          <%= link_to "<span class='btn-details'><span class='btn-text'>Solicite um Orçamento<span class='btn-sub-text'></span></span></span>".html_safe, "#{slider.link}", style: "background-color:#0A3B5A; color:#ffffff;", class: "btn left large rounded" %>
+          </div><!-- .flex-title -->
+        </div><!-- .flex-caption-inner -->
+      </div><!-- .flex-caption -->
+      </li>
+      <% end %>
+    </ul>
+    <ul class="flex-direction-nav">
+      <li><a class="flex-prev" href="#"></a></li>
+      <li><a class="flex-next" href="#"> </a></li>
+    </ul>
+    </div><!-- .flexslider -->
+  </div><!-- .flexslider_wrap -->
+</section><!-- #featured_slider -->

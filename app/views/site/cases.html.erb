@@ -1,0 +1,62 @@
+<div id="subheader" class="sleft">
+  <div class="subheader-inner">
+    <div class="subdesc">
+      <h1 class="page-title">Casos Clínicos</h1>
+    </div>
+    <div class="breadcrumb-main">
+      <div class="breadcrumb-wrap inner">
+        <div class="breadcrumbs">
+          <!-- Breadcrumb NavXT 5.7.1 -->
+          <span><%= link_to "Início", root_path, class: "home", data: { turbolinks: false } %></span>
+          <span><i class="fa fa-angle-right"></i></span>
+          <span><span>Casos Clínicos</span></span>
+        </div><!-- .breadcrumbs-->
+      </div><!-- .breadcrumb-wrap-->
+    </div><!-- .breadcrumb-main-->
+  </div><!-- .subheader-inner-->
+</div><!-- #subheader-->
+
+
+<div id="main">
+  <div id="primary" class="pagemid">
+    <div class="inner">
+      <main class="content-area">
+        <div class="entry-content-wrapper clearfix">
+          <div class="cases-align">
+            <div class="at-cases-main" style="">
+
+              <% @count = 1 %>
+              <% @cases.each.with_index(1) do |case_item, index| %>
+              <%
+              if @count == 3 then
+
+                @seletor="last"
+                @count = 0
+              else
+                @seletor = ""
+              end
+
+              @count = @count+1
+                %>
+
+              <div class="one_third <%= @seletor %> at-cases-item">
+                <div class="at-cases-details">
+                  <%= image_tag(case_item.case_attachments.first.photo_url) %>
+
+                  <div class="at-cases-content">
+                    <span class="title"><%= case_item.title %></span>
+                    <span class="categories"><%= case_item.category %></span>
+                  </div>
+                  <a href="#"></a>
+                </div>
+              </div>
+              <% end %>
+
+            </div>
+            <div class="clear"></div>
+          </div><!-- .cases-align-->
+        </div><!-- .entry-content-wrapper -->
+      </main><!-- .content-area -->
+    </div><!-- .inner -->
+  </div><!-- .pagemid -->
+</div><!-- #main -->

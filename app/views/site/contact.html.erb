@@ -1,0 +1,75 @@
+<div id="subheader" class="sleft">
+  <div class="subheader-inner">
+    <div class="subdesc">
+      <h1 class="page-title">Fale Conosco</h1>
+    </div>
+    <div class="breadcrumb-main">
+      <div class="breadcrumb-wrap inner">
+        <div class="breadcrumbs">
+          <!-- Breadcrumb NavXT 5.7.1 -->
+          <span><%= link_to "Início", root_path, class: "home", data: { turbolinks: false } %></span>
+          <span><i class="fa fa-angle-right"></i></span>
+          <span><span>Fale Conosco</span></span>
+        </div><!-- .breadcrumbs-->
+      </div><!-- .breadcrumb-wrap-->
+    </div><!-- .breadcrumb-main-->
+  </div><!-- .subheader-inner-->
+</div><!-- #subheader-->
+
+<div id="main">
+	<div id="primary" class="pagemid">
+		<div class="inner">
+
+			<main class="content-area">
+				<div class="entry-content-wrapper">
+					<div class="ct-section2" style="padding: 0px 0">
+            <!-- HOME BLOCK -->
+            <%= @block_address.content.html_safe %>
+            <!-- HOME BLOCK -->
+					</div>
+          <div class="demo_space" style="height:40px;"></div>
+					<div class="ct-section3">
+						<div class="two_third">
+							<div class="section-inner clearfix">
+
+								<div class="fancyheading left">
+									<h3 class="fancy-title">
+										<span style="color:#444444;"><strong>FORMULÁRIO DE CONTATO</strong><small></small></span>
+									</h3>
+								</div>
+
+								<div id="form" data-ng-controller="formController">
+
+											<!-- <div id="messages" class="well" data-ng-show="messages"><div class="iva_message_box success iva-box-solid iva-box-large clearfix">
+											<div class="iva_message_box_content">{{messages}}</div></div>
+										</div> -->
+
+										<form name="c_form" novalidate>
+											<p><input type="text" name="name" placeholder="Nome"  required></p>
+											<p><input type="email"  name="email" placeholder="Email" required>
+
+											</p>
+											<p ><input type="text" name="subject" size="40" placeholder="Assunto"  required>
+											</p>
+											<p><textarea name="message" cols="40" rows="10" placeholder="Mensagem"></textarea></p>
+											<p><input type="submit" value="ENVIAR MENSAGEM" ></p>
+										</form>
+
+								</div><!--form-->
+
+							</div>
+
+
+						</div>
+
+						<div class="one_third last ct-office">
+              <!-- HOME BLOCK -->
+              <%= @block_info.content.html_safe %>
+              <!-- HOME BLOCK -->
+						</div>
+					</div><!--.ct-section3-->
+				</div><!--entry-content-wrapper clearfix-->
+			</main>
+		</div><!--inner-->
+	</div><!--.pagemid-->
+</div><!--main-->

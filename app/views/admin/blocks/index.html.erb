@@ -1,0 +1,62 @@
+<div class="">
+  <div class="page-title">
+    <div class="title_left">
+      <h3>Blocos de Conteúdo</h3>
+    </div>
+
+    <div class="title_right">
+      <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+        <%= render "layouts/shared_admin/search" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Lista de Blocos</h2>
+          <ul class="nav navbar-right">
+            <li><%= button_to new_admin_block_path, method: :get, class: "btn btn-round btn-primary" do %>
+                <i class="fa fa-plus"></i> Novo Bloco
+              <% end %></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <table class="table table-striped projects">
+            <thead>
+              <tr>
+                <th style="width: 1%">#</th>
+                <th>Página</th>
+                <th style="width: 20%">Título</th>
+                <th>Posição</th>
+                <th>Cadastrado em:</th>
+                <th style="width: 15%">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @blocks.each do |block| %>
+              <tr>
+                <td><%= block.id %></td>
+                <td><%= block.page.title %></td>
+                <td><%= block.title %></td>
+                <td><%= block.position %></td>
+                <td><%= block.created_at %></td>
+                <td>
+                  <!-- <%= link_to '<i class="fa fa-eye"></i> Show'.html_safe, [:admin, block], class: "btn btn-primary btn-xs" %> -->
+                  <%= link_to '<i class="fa fa-pencil"></i> Editar'.html_safe, edit_admin_block_path(block), class: "btn btn-info btn-xs" %>
+                  <%= link_to '<i class="fa fa-trash-o"></i> Excluir'.html_safe, [:admin, block], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <!-- end project list -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

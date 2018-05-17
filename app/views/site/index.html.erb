@@ -1,0 +1,125 @@
+<%= render "slider" %>
+
+<div id="main" class="content-area">
+  <a name="como-funciona"></a>
+  <!-- COMO FUNCIONA BLOCK -->
+  <%= @block_comofunciona.content.html_safe %>
+  <!-- COMO FUNCIONA BLOCK -->
+
+  <!-- LAUDOS A DISTANCIA HOME BLOCK -->
+  <%= @block_laudos.content.html_safe %>
+  <!-- LAUDOS A DISTANCIA HOME BLOCK -->
+
+<a name="nossas-solucoes"></a>
+
+  <div class="section_row clearfix">
+    <div class="section_inner">
+
+      <div class="at-fancy-heading-v1 textcenter">
+          <h2 style="color: #8a8c98; font-weight: 300;">NOSSAS<Br><strong style="color: #0A3B5A; font-weight: bold;">SOLUÇÕES</strong></h2>
+            <p></p>
+      <span class="at-fancy-heading-v1-sep"></span>
+      </div><!-- .fancy-heading-->
+
+
+      <div class="ac_wrap iva_anim">
+
+        <% @solutions.each do |solution| %>
+        <div class="ac_title">
+          <span class="arrow"></span>
+          <i class="fa fa fa-compass"></i><%= solution.title %>
+        </div>
+
+        <div class="ac_content" style="display: none;">
+          <%= solution.content %>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section_row clearfix" style="padding-top:0px;">
+    <div class="section_inner">
+
+      <div class="at-fancy-heading-v1 textcenter">
+          <h2 style="color: #8a8c98; font-weight: 300;">Fique Por Dentro<Br><strong style="color: #0A3B5A; font-weight: bold;">NOTÍCIAS</strong></h2>
+            <p></p>
+      <span class="at-fancy-heading-v1-sep"></span>
+      </div><!-- .fancy-heading-->
+
+      <div class="three_fourth">
+
+        <% @news.take(3).each_with_index do |post, index| %>
+        <article id="post-<%= index %>" class="post one_third <%= "last" if index == 2 %>">
+          <div class="at-blog-sc-v1">
+            <div class="at-post-content">
+              <h2 class="at-entry-title">
+                <a href="<%= post['link'] %>" rel="bookmark"><%= post['title'].truncate(55) %></a>
+              </h2>
+              <% descrition =  %>
+              <div class="at-entry-content"><%= ActionView::Base.full_sanitizer.sanitize(post['description']).truncate(150) %></div>
+            </div>
+            <div class="at-post-meta">
+              <span class="iva-pm-postin">Publicado em <%= post['pubDate'].to_date%> por <b><a href="<%= @link[1] %>"><%= @author %></a></b></span>
+              <span class="iva-pm-comments"><a href="#"></a></span>
+            </div>
+          </div>
+        </article>
+        <% end %>
+      </div><!-- three_fourth -->
+
+      <!-- ORÇAMENTO NOTICIAS HOME BLOCK -->
+        <%= @block_noticias.content.html_safe %>
+      <!-- ORÇAMENTO NOTICIAS HOME BLOCK -->
+
+    </div><!-- .section_inner-->
+  </div><!-- .section_row-->
+
+  <div class="section_row clearfix" style="background-color:#0A3B5A; padding: 40px 0;">
+
+    <div class="section_inner">
+      <div class="at-fancy-heading-v1">
+        <h3 style="color:#fff"><strong>Parceiros</strong></h3>
+      </div>
+      <div class="owl-wrapper">
+        <div id="owl-20" class="owl-Carousel">
+          <% @partners.each do |partner| %>
+          <div class="owl-item">
+            <div class="clientthumb">
+              <%= link_to partner.link, target: "_Blank" do %>
+              <figure><%= image_tag(partner.logo_url) %></figure>
+              <% end %>
+            </div>
+          </div><!-- .owl-item-->
+          <% end %>
+        </div><!-- .owlCarousel-->
+      </div><!-- .owl-wrapper-->
+    </div><!-- .section_inner-->
+  </div><!-- .section_row-->
+  <a name="nosso-diferencial"></a>
+  <!-- DIFERENCIAL HOME BLOCK -->
+  <%= sanitize @block_diferencial.content %>
+  <!-- DIFERENCIAL HOME BLOCK -->
+
+
+  <div class="section_row clearfix">
+    <div class="at-fancy-heading-v2 textcenter">
+      <h1 class="at-fancy-title-v2 ">Grupo Digitalrad</h1>
+      <span class="at-fancy-subtitle-v2">Conheça as Empresas do Grupo Digitalrad</span>
+    </div>
+    <div class="section_inner">
+
+      <% @companies.each do |company| %>
+      <div class="at-icon-box-v1 one_fourth">
+        <%= link_to company.link, target: "_Blank", class:"at-icon__main-v1" do %>
+          <p><%= image_tag(company.logo_url) %></p>
+        <% end %>
+      </div>
+      <% end %>
+
+      <div class="clear"></div>
+
+    </div>
+  </div>
+</div>

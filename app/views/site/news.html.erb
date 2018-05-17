@@ -1,0 +1,28 @@
+<% @news.each do |post| %>
+<article id="post-2580" class="post one_third ">
+  <div class="at-blog-sc-v1">
+    <div class="at-post-content">
+      <h2 class="at-entry-title">
+        <a href="<%= post['link'] %>" rel="bookmark"><%= post['title'] %></a>
+      </h2>
+      <% descrition = ActionView::Base.full_sanitizer.sanitize(post['description']) %>
+      <div class="at-entry-content"><%= descrition.slice(0..(descrition.index('Leia Mais'))) %></div>
+    </div>
+    <div class="at-post-meta">
+      <span class="iva-pm-postin">Publicado em <%= post['pubDate'] %></span>
+      <span class="iva-pm-comments"><a href="#"></a></span>
+      <!-- <span class="iva-meta-likes"><a href="#" class="iva-love" id="iva-love-2580" title="Like this"><span class="iva-love-count">0</span> Likes</a></span> -->
+    </div>
+  </div>
+</article>
+
+
+
+
+  <br>
+  <br>
+  <br>
+
+
+
+<% end %>

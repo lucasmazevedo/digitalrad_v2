@@ -1,0 +1,81 @@
+<header>
+  <div id="fixedheader" class="header" style="top: 0px;">
+    <div class="header-area">
+      <div class="logo">
+        <%= link_to root_path, title: "Digitalrad - Número 1 em Teleradiologia", data: { turbolinks: false } do %>
+        <img src="/assets/logo.png" alt="Digitalrad - Número 1 em Teleradiologia" width="200" style="transform: scale(1);">
+      <% end %>
+      </div>
+      <!-- /logo -->
+      <div class="header-rightpart">
+        <div class="primarymenu menuwrap">
+          <ul class="sf-menu">
+            <li class="current-menu-ancestor">
+              <%= link_to "Página Inicial <i class='fa fa-chevron-down'></i>".html_safe, root_path, data: { turbolinks: false }%>
+            <ul>
+              <li><%= link_to "Como Funciona", root_path(anchor: "como-funciona"), data: { turbolinks: false }%></li>
+              <li><%= link_to "Vantagens Para seu Serviço", root_path(anchor: "nosso-diferencial"), data: { turbolinks: false }%></li>
+              <li><%= link_to "Solução Completa em Laudos à Distancia", root_path(anchor: "nossas-solucoes"), data: { turbolinks: false }%></li>
+            </ul>
+            </li>
+
+            <li><%= link_to "Quem Somos <i class='fa fa-chevron-down'></i>".html_safe, quem_somos_path, data: { turbolinks: false }%>
+            <ul>
+              <li><%= link_to "A Digitalrad", quem_somos_path(anchor: "a-digitalrad"), data: { turbolinks: false }%></li>
+              <li><%= link_to "Nossa Estrutura", quem_somos_path(anchor: "nossa-estrutura"), data: { turbolinks: false }%></li>
+              <!-- <li><%= link_to "Área de Atuação", quem_somos_path(anchor: "area-atuacao"), data: { turbolinks: false }%></li> -->
+              <li><%= link_to "Equipe Médica", quem_somos_path(anchor: "equipe-medica"), data: { turbolinks: false }%></li>
+            </ul>
+            </li>
+            <li><%= link_to "Laudos a Distância <i class='fa fa-chevron-down'></i>".html_safe, laudos_distancia_path, data: { turbolinks: false }%>
+            <ul>
+              <% Report.all.each do |report| %>
+                <li><%= link_to report.title, laudos_distancia_path(anchor: "#{report.slug}"), data: { turbolinks: false }%></li>
+              <% end %>
+            </ul>
+            </li>
+            <li><%= link_to "Casos Clínicos".html_safe, casos_clinicos_path, data: { turbolinks: false }%></li>
+            <li><%= link_to "<i class='fa fa-lock' style='color:red;''></i>  Contratos".html_safe, contratos_path, data: { turbolinks: false }%></li>
+            <li><%= link_to "Fale Conosco".html_safe, fale_conosco_path, data: { turbolinks: false }%></li>
+          </ul><!-- .sf-menu-->
+        </div><!-- .primarymenu-->
+      </div><!-- .header-rightpart-->
+
+      <div id="iva-mobile-nav-icon" class="iva-mobile-dropdown"><span></span><span></span><span></span><span></span></div>
+    </div><!-- .header-area-->
+    <div class="iva-mobile-menu" style="display: none;">
+      <ul class="sf-menu">
+        <li>
+          <a href="#">Página Inicial <i class="fa fa-chevron-down"></i></a>
+        <ul>
+          <li><a href="/">Como Funciona</a></li>
+          <li><a href="/">Vantagens Para seu Serviço</a></li>
+          <li><a href="/">Solução Completa em Laudos à Distancia</a></li>
+        </ul>
+        </li>
+        <li><a href="/">Quem Somos <i class="fa fa-chevron-down"></i></a>
+        <ul>
+          <li><a href="/">A Digitalrad</a></li>
+          <li><a href="/">Estrutura</a></li>
+          <li><a href="/">Área de Atuação</a></li>
+          <li><a href="/">Equipe Médica</a></li>
+        </ul>
+        </li>
+        <li><a href="/">Laudos a Distância <i class="fa fa-chevron-down"></i></a>
+        <ul>
+          <li><a href="/">Densitometria Óssea</a></li>
+          <li><a href="/">Mamografia</a></li>
+          <li><a href="/">Medicina Nuclear (PET-CT)</a></li>
+          <li><a href="/">Plantão e Atendimento de Urgência</a></li>
+          <li><a href="/">Radiologia Geral</a></li>
+          <li><a href="/">Resônancia Magnética</a></li>
+          <li><a href="/">Tomografia Computadorizada</a></li>
+        </ul>
+        </li>
+        <li><a href="/">Casos Clínicos</a></li>
+        <li><a href="/"><i class="fa fa-lock" style="color:red;"></i>  Contratos</a></li>
+        <li><a href="/">Contato</a></li>
+      </ul><!-- .sf-menu-->
+    </div><!-- .iva-mobile-menu-->
+  </div><!-- #fixedheader-->
+</header>

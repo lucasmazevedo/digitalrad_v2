@@ -1,0 +1,24 @@
+<div class="topbar">
+
+  <div class="inner">
+
+    <div class="topbar-left">
+      <aside id="text-2" class=" widget_text">
+          <%= Block.friendly.find("barra-topo").content.html_safe %>
+      </aside>
+    </div><!-- .topbar-left -->
+    <div class="topbar-right">
+      <aside id="nav_menu-2" class=" widget_nav_menu">
+        <div class="menu-topbar-menu-container">
+          <ul id="menu-topbar-menu" class="menu">
+            <% if user_signed_in? %>
+            Olá, <%= current_user.name %>.&nbsp;&nbsp;&nbsp; | &nbsp;<%= link_to "<i class='fa fa-book'></i> Meus Contratos".html_safe, contratos_path %>&nbsp; | &nbsp;<%= link_to('<i class="fa fa-sign-out"></i> Sair'.html_safe, destroy_user_session_path, method: :delete) %>
+            <% else %>
+            <%= Block.friendly.find("barra-topo-direita").content.html_safe %>
+            <% end %>
+          </ul>
+        </div>
+      </aside>
+    </div><!-- .topbar-right -->
+  </div><!-- .inner -->
+</div><!-- .topbar -->

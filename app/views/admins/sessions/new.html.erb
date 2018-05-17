@@ -1,0 +1,36 @@
+<div class="animate form login_form">
+  <section class="login_content">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <h1>Entrar no Sistema</h1>
+
+    <%= f.input :email, required: false, autofocus: true %>
+    <%= f.input :password, required: false %>
+    <%# f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<%= button_tag(class: "btn btn-primary", data: { disable_with: "Processando..." }) do
+  content_tag(:strong, 'Entrar no Sistema')
+end %>
+
+<div class="clearfix"></div>
+
+<div class="separator">
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <p class="change_link">Esqueceu a Senha?
+    <%= link_to "Recupere Aqui", new_password_path(resource_name), class:"to_register" %>
+  </p>
+  <% end -%>
+
+  <div class="clearfix"></div>
+  <br />
+
+  <div>
+    <h1><i class="fa fa-cloud"></i> Cloud<b>Admin</b></h1>
+    <p>© 2018 - Todos os Direitos Reservados - Cloud Admin</p>
+  </div>
+</div>
+<% end %>
+</section>
+</div>
+
+<%# render "admins/registrations/new" %>
+
+<%# render "admins/shared/links" %>

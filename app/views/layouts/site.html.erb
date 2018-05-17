@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DigitalRad - Número 1 em Teleradiologia</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900%7CPoppins:300,400,800&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <%= stylesheet_link_tag    'site', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
+	<script>
+	jQuery(document).ready(function($) {
+		$("#owl-20").owlCarousel({
+		autoPlay: 3000,
+		pagination : false,
+		items : 5,
+		itemsDesktop : [1199,4],
+		itemsDesktopSmall : [1024,4],
+		itemsTablet : [768,2],
+		itemsMobile : [479,2]
+		});
+
+
+		$("#owl-galery").owlCarousel({
+		autoPlay: 3000,
+		pagination : false,
+		items : 5,
+		itemsDesktop : [1199,4],
+		itemsDesktopSmall : [1024,4],
+		itemsTablet : [768,2],
+		itemsMobile : [479,2]
+		});
+	});
+	</script>
+</head>
+  <body class="">
+    <div class="labora_page_loader" style="display: none;"></div>
+    <div id="wrapper">
+      <%= render 'layouts/site/header' %>
+      <%= render 'layouts/site/navbar' %>
+
+        <%= yield %>
+      <%= render 'layouts/site/footer' %>
+    </div><!-- .wrapper -->
+    <div id="back-top"><a href="#header" title="Scroll Top"><span class="fa fa-angle-up fa-fw fa-2x"></span></a></div>
+  </body>
+</html>

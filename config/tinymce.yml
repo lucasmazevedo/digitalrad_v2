@@ -1,0 +1,10 @@
+toolbar:
+  - styleselect | bold italic | undo redo | link code
+plugins:
+  - link
+  - code
+valid_elements: "*[*]"
+verify_html: false
+apply_source_formatting : false
+valid_children: "+a[div|i|span|img|p|ul|ol|li|h1|h2|h3|h4|h5|h5|h6]"
+convert_urls : false

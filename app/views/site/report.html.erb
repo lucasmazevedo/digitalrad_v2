@@ -1,0 +1,55 @@
+<div id="subheader" class="sleft">
+  <div class="subheader-inner">
+    <div class="subdesc">
+      <h1 class="page-title">Laudos a Distância</h1>
+    </div>
+    <div class="breadcrumb-main">
+      <div class="breadcrumb-wrap inner">
+        <div class="breadcrumbs">
+          <!-- Breadcrumb NavXT 5.7.1 -->
+          <span><%= link_to "Início", root_path, class: "home", data: { turbolinks: false } %></span>
+          <span><i class="fa fa-angle-right"></i></span>
+          <span><span>Laudos a Distância</span></span>
+        </div><!-- .breadcrumbs-->
+      </div><!-- .breadcrumb-wrap-->
+    </div><!-- .breadcrumb-main-->
+  </div><!-- .subheader-inner-->
+</div><!-- #subheader-->
+
+
+
+		<div class="main rightsidebar">
+			<div class="pagemid-section">
+				<div class="inner">
+					<main class="content-area">
+						<div class="entry-content-wrapper clearfix">
+
+              <% @reports.each do |report| %>
+              <div class="demo_space" style="height:70px"></div>
+						<div id="<%= report.slug %>" class="box">
+							<div class="shortcode-header"><h2><%= report.title %></h2></div>
+              <div class="divider thin" style="border-color:#dddddd;margin:20px 0;"></div>
+              <%= report.content %>
+						</div>
+
+						<div class="demo_space" style="height:55px"></div>
+            <% end %>
+						</div><!-- .entry-content-wrapper-->
+					</main>
+
+					<div id="sidebar">
+						<div class="sticky-sidebar">
+							<div class="content widget-area">
+								<ul class="sub_nav">
+                  <% @reports.each do |report| %>
+									<li class="page_item"><%= link_to report.title, "##{report.slug}" %></li>
+                  <% end %>
+								</ul>
+							</div>
+						</div>
+					</div><!--.sidebar-->
+
+				</div><!--inner-->
+			</div><!--.pagemid-section-->
+			<div class="sticky-stopper"></div>
+			</div><!--.main-->

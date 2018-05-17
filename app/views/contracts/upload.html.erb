@@ -1,0 +1,72 @@
+<script type="text/javascript">
+  document.body.className = 'rightsidebar';
+</script>
+<div id="subheader" class="sleft">
+  <div class="subheader-inner">
+    <div class="subdesc">
+      <h1 class="page-title">Central de Contratos</h1>
+    </div>
+    <div class="breadcrumb-main">
+      <div class="breadcrumb-wrap inner">
+        <div class="breadcrumbs">
+          <!-- Breadcrumb NavXT 5.7.1 -->
+          <span><%= link_to "Início", root_path, class: "home", data: { turbolinks: false } %></span>
+          <span><i class="fa fa-angle-right"></i></span>
+          <span><span>Contratos</span></span>
+        </div><!-- .breadcrumbs-->
+      </div><!-- .breadcrumb-wrap-->
+    </div><!-- .breadcrumb-main-->
+  </div><!-- .subheader-inner-->
+</div><!-- #subheader-->
+
+		<div id="main">
+			<div id="primary" class="pagemid">
+				<div class="inner">
+					<main class="content-area">
+						<div class="entry-content-wrapper clearfix">
+
+							<h3>Bem Vindo, <strong><%= current_user.name %></strong></h3>
+							<p>Faça aqui o envio do seu contrato.</p>
+
+              <div class="divider thin" style="border-color:#cccccc;margin:30px 0;"></div>
+              <div id="form" data-ng-controller="formController">
+
+                  <form name="c_form" novalidate>
+
+                    <p>
+                      <label for="pic"><b>Enviar Contrato</b></label><br>
+                      <input type="file" name="pic" accept="image/*"></p>
+                    <p>
+                      <label for="pic"><b>Comentários</b></label><br>
+                      <textarea name="message" cols="30" rows="5" placeholder="Mensagem"></textarea></p>
+                    <p><input type="submit" value="ENVIAR CONTRATO" ></p>
+                  </form>
+
+              </div><!--form-->
+
+
+									</div><!-- .entry-content-wrapper -->
+					</main><!-- .content-area -->
+
+					<div id="sidebar">
+						<div class="content widget-area clearfix">
+							<aside id="nav_menu-8" class="widget-area widget_nav_menu">
+								<div class="menu-about-menu-container">
+									<ul id="menu-about-menu" class="menu">
+                    <li><%= link_to "Ver Contratos", contratos_path %></li>
+                    <li><%= link_to "Enviar Contrato Assinado", enviar_contratos_path, style: "border-left: 3px solid #0A3B5A" %></li>
+                    <li><%= link_to "Dúvidas?", root_path %></li>
+									</ul>
+								</div><!-- .menu-about-menu-container-->
+							</aside><!-- .widget-area-->
+
+							<aside id="text-12" class=" widget widget_text">
+								<div class="textwidget">
+									<a style="background-color:#0A3B5A; color:#ffffff;" class="btn  medium faicon lefticon  full rounded"><span class="btn-details"><span class="btn-icon"><i style=" color:#ffffff;" class="fa fa-lock"></i></span><span class="btn-text">Reportar Problema<span class="btn-sub-text"></span></span></span></a>
+								</div><!-- .textwidget-->
+							</aside><!-- .widget-->
+						</div><!-- .widget-area-->
+					</div><!-- #sidebar-->
+				</div><!-- .inner -->
+			</div><!-- .pagemid -->
+		</div><!-- #main -->

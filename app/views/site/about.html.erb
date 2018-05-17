@@ -1,0 +1,138 @@
+<div id="subheader" class="sleft">
+  <div class="subheader-inner">
+    <div class="subdesc">
+      <h1 class="page-title">Quem Somos</h1>
+    </div>
+    <div class="breadcrumb-main">
+      <div class="breadcrumb-wrap inner">
+        <div class="breadcrumbs">
+          <!-- Breadcrumb NavXT 5.7.1 -->
+          <span><%= link_to "Início", root_path, class: "home", data: { turbolinks: false } %></span>
+          <span><i class="fa fa-angle-right"></i></span>
+          <span><span>Quem Somos</span></span>
+        </div><!-- .breadcrumbs-->
+      </div><!-- .breadcrumb-wrap-->
+    </div><!-- .breadcrumb-main-->
+  </div><!-- .subheader-inner-->
+</div><!-- #subheader-->
+
+
+<a name="a-digitalrad"></a>
+<div id="main" class="content-area">
+  <div id="primary" class="pagemid">
+    <div class="section_row" style="padding:0;">
+      <div class="section_inner">
+        <!-- SOBRE DIGITAL HOME BLOCK -->
+        <%= @block_sobre.content.html_safe %>
+          <!-- SOBRE DIGITAL HOME BLOCK -->
+            </div><!-- .section_inner-->
+    </div><!-- .section_row-->
+
+    <div class="divider thin" style="margin:80px 0;height: 1px;"></div>
+    <a name="nossa-estrutura"></a>
+
+    <div class="section_row" style="padding:0;">
+      <div class="section_inner">
+        <div class="at-fancy-heading-v1 textcenter" style="margin-top:80px;">
+          <h2 style="color: #8a8c98;">Nossa Estrutura</h2>
+          <span class="at-fancy-heading-v1-sep"></span>
+        </div>
+        <div class="demo_space" style="height:80px;"></div>
+        <% @structures.each do |structure| %>
+        <div class="one_fourth">
+        	<div class="at-image inside-image" data-animation="fadeIn">
+        		<div class="at-image-holder">
+        			<div class="at-image-inner">
+                <%= image_tag(structure.photo_url, class: "lightbox-enable", alt: structure.title, width: "300", height: "200") %>
+        				<div class="at-image-overlay"></div>
+                <%= link_to "<i class='pe-3x pe-fw pe-7s-plus'></i>".html_safe, structure.photo_url, "data-rel": "prettyPhoto", class: "at-image-lightbox lightbox", alt: structure.title %>
+        			</div>
+        			<div class="at-image-caption">
+        				<span class="at-image-caption-title"><%= structure.title %></span>
+        				<span class="at-image-caption-txt"><%= structure.subtitle %></span>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <% end %>
+            </div><!-- .section_inner-->
+    </div><!-- .section_row-->
+
+
+    <!-- <a name="area-atuacao"></a>
+    <div class="section_row clearfix" style="padding-top:0;">
+      <div class="section_inner">
+        <div class="divider thin" style="margin:80px 0;height: 1px;"></div>
+
+    </div>
+  <div class="section_row clearfix" style="background-color: #242424; color:#ffffff;">
+    <div class="section_inner">
+      <div class="at-fancy-heading-v1 textcenter">
+        <h2 style="color: #ffffff;">Labora is a award winning Laboratory Company.</h2>
+        <span class="at-fancy-heading-v1-sep"></span>
+      </div>
+
+      <div class="one_third">
+        <div class="at-fancy-heading-v1 textleft whitetext">
+          <h2 style="font-weight: 800;">2016.</h2>
+          <p><strong>AIMS BY LABORATORIES AWARDS</strong></p>
+          <span class="at-fancy-heading-v1-sep"></span>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque mauris id lectus volutpat eleifend. In mollis sapien in metus mattis feugiat eget.</p>
+      </div>
+
+      <div class="one_third">
+        <div class="at-fancy-heading-v1 textleft whitetext">
+          <h2 style="font-weight: 800;">2016.</h2>
+          <p><strong>AIMS BY LABORATORIES AWARDS</strong></p>
+          <span class="at-fancy-heading-v1-sep"></span>
+        </div>
+
+        <p style="color: #ffffff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque mauris id lectus volutpat eleifend. In mollis sapien in metus mattis feugiat eget.</p>
+      </div>
+
+      <div class="one_third last">
+        <div class="at-fancy-heading-v1 textleft whitetext">
+          <h2 style="font-weight: 800;">2016.</h2>
+          <p><strong>AIMS BY LABORATORIES AWARDS</strong></p>
+          <span class="at-fancy-heading-v1-sep"></span>
+        </div>
+
+        <p style="color: #ffffff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque mauris id lectus volutpat eleifend. In mollis sapien in metus mattis feugiat eget.</p>
+      </div>
+    </div>
+  </div>-->
+
+
+  <a name="equipe-medica"></a>
+  <div class="section_row clearfix" style="padding-bottom: 0;">
+    <div class="section_inner">
+      <div class="at-fancy-heading-v1 textcenter">
+        <h2 style="color: #8a8c98;">Equipe Médica</h2>
+        <span class="at-fancy-heading-v1-sep"></span>
+      </div>
+      <div class="demo_space" style="height:80px;"></div>
+      <div class="at-person grid  col_4">
+        <ul>
+          <% @doctors.each do |doctor| %>
+          <li>
+            <div class="at-person-image">
+              <%= link_to "#" do %>
+                <%= image_tag(doctor.photo_url, alt: doctor.name, height: 250) %>
+              <% end %>
+            </div>
+            <div class="at-person-content">
+              <h4><a href="#"><%= doctor.name %></a></h4>
+              <h6><%= doctor.speciality %></h6>
+              <p><%= doctor.resume.truncate(120) %></p>
+              <%= link_to "<span>Ver Lattes</span>".html_safe, doctor.lattes, class: "read_more", target: "_Blank" %>
+            </div>
+          </li>
+          <% end %>
+        </ul>
+      </div><!-- .one_fourth last-->
+      </div><!-- .section_inner -->
+    </div><!-- .section_row -->
+  </div><!-- #primary-->
+</div><!-- #main-->

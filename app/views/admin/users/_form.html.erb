@@ -1,0 +1,29 @@
+<%= simple_form_for([:admin, @user], wrapper: "horizontal_form", :html=> { class: 'form-horizontal form-label-left' }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <%= f.input :usertype, collection: User.usertypes.keys,
+  :selected => User.usertypes.keys[@user[:usertype].to_i],
+  input_html: { autocomplete: 'off' },
+  label_method: lambda {|k| k.humanize} %>
+
+  <%= f.input :name, placeholder: "Nome Completo" %>
+  <%= f.input :email, placeholder: "Endereço de Email" %>
+  <%= f.input :company, placeholder: "Nome da Empresa" %>
+  <%= f.input :document, placeholder: "CPF/CNPJ" %>
+  <%= f.input :address, placeholder: "Endereço" %>
+  <%= f.input :number, placeholder: "Numero" %>
+  <%= f.input :neighborhood, placeholder: "Bairro" %>
+  <%= f.input :city, placeholder: "Cidade" %>
+  <%= f.input :state, placeholder: "Piauí" %>
+
+<div class="ln_solid"></div>
+  <div class="form-group">
+    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+      <%= link_to 'Cancel', admin_admins_path, class: "btn btn-primary" %>
+      <%= f.button :submit, class: "btn btn-success" do %>
+        Enviar
+      <% end %>
+    </div>
+  </div>
+<% end %>
