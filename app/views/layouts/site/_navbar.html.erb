@@ -3,7 +3,7 @@
     <div class="header-area">
       <div class="logo">
         <%= link_to root_path, title: "Digitalrad - Número 1 em Teleradiologia", data: { turbolinks: false } do %>
-        <img src="/assets/logo.png" alt="Digitalrad - Número 1 em Teleradiologia" width="200" style="transform: scale(1);">
+        <%= image_tag("logo.png", width: "200", alt: "Digitalrad - Número 1 em Teleradiologia", style: "transform: scale(1);") %>
       <% end %>
       </div>
       <!-- /logo -->
