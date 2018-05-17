@@ -37,11 +37,12 @@
           <h3 class="widget-title">Mapa do Site</h3>
           <div class="menu-footer-one-container">
             <ul class="menu">
-              <li><a href="#">Quem Somos</a></li>
-              <li><a href="#">Laudos à Distância</a></li>
-              <li><a href="#">Casos Clínicos</a></li>
-              <li><a href="#">Contratos</a></li>
-              <li><a href="#">Fale Conosco</a></li>
+
+              <li><%= link_to "Quem Somos".html_safe, quem_somos_path, data: { turbolinks: false }%></li>
+              <li><%= link_to "Laudos a Distância".html_safe, laudos_distancia_path, data: { turbolinks: false }%></li>
+              <li><%= link_to "Casos Clínicos".html_safe, casos_clinicos_path, data: { turbolinks: false }%></li></li>
+              <li><%= link_to "<i class='fa fa-lock' style='color:red;''></i>  Contratos".html_safe, contratos_path, data: { turbolinks: false }%></li>
+              <li><%= link_to "Fale Conosco".html_safe, fale_conosco_path, data: { turbolinks: false }%></li>
             </ul>
           </div>
         </aside>
@@ -49,11 +50,11 @@
           <h3 class="widget-title">Saiba Mais</h3>
           <div class="menu-footer-one-container">
             <ul class="menu">
-              <li><a href="#">Como Funciona</a></li>
-              <li><a href="#">Equipe Médica</a></li>
-              <li><a href="#">Vantagens para Seu Serviço</a></li>
-              <li><a href="#">Área de Atuação</a></li>
-              <li><a href="#">Nossa Estrutura</a></li>
+              <li><%= link_to "Como Funciona", root_path(anchor: "como-funciona"), data: { turbolinks: false }%></li>
+              <li><%= link_to "Equipe Médica", quem_somos_path(anchor: "equipe-medica"), data: { turbolinks: false }%></li>
+              <li><%= link_to "Vantagens Para seu Serviço", root_path(anchor: "nosso-diferencial"), data: { turbolinks: false }%></li>
+              <!-- <li><a href="#">Área de Atuação</a></li> -->
+              <li><%= link_to "Nossa Estrutura", quem_somos_path(anchor: "nossa-estrutura"), data: { turbolinks: false }%></li>
             </ul>
           </div>
         </aside>

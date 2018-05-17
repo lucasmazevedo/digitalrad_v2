@@ -38,21 +38,20 @@
       <li><%= link_to "<i class='fa fa-building '></i> Empresas </a>".html_safe, admin_companies_path %></li>
       <li><%= link_to "<i class='fa fa-handshake-o'></i> Parceiros </a>".html_safe, admin_partners_path %></li>
       <li><%= link_to "<i class='fa fa-lightbulb-o'></i> Soluções </a>".html_safe, admin_solutions_path %></li>
-      <li><%= link_to "<i class='fa fa-lightbulb-o'></i> Blocos de Conteúdo </a>".html_safe, admin_blocks_path %></li>
+      <li><%= link_to "<i class='fa fa-th'></i> Blocos de Conteúdo </a>".html_safe, admin_blocks_path %></li>
+      <li><%= link_to "<i class='fa fa-hospital-o'></i> Estrutura </a>".html_safe, admin_structures_path %></li>
 
     </ul>
   </div>
   <div class="menu_section">
-    <h3>Sistema</h3>
+    <h3>Contratos</h3>
     <ul class="nav side-menu">
-        <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class="fa fa-file"></i> Contratos <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="page_403.html">403 Error</a></li>
-          <li><a href="page_404.html">404 Error</a></li>
-          <li><a href="page_500.html">500 Error</a></li>
-          <li><a href="plain_page.html">Plain Page</a></li>
-          <li><a href="login.html">Login Page</a></li>
-          <li><a href="pricing_tables.html">Pricing Tables</a></li>
+          <li><%= link_to "Cadastrar Cliente".html_safe, admin_users_path %></li>
+          <li><a href="/">Contratos Recebidos</a></li>
+          <li><a href="/">Lista de Contratos</a></li>
+
         </ul>
       </li>
     </ul>
@@ -72,8 +71,6 @@
   <a data-toggle="tooltip" data-placement="top" title="Lock">
     <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
   </a>
-  <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-  </a>
+  <%= link_to('<span class="glyphicon glyphicon-off" aria-hidden="true"></span>'.html_safe, destroy_admin_session_path, method: :delete, "data-toggle": "tooltip", "data-placement": "top", title: "Logout") %>
 </div>
 <!-- /menu footer buttons -->
