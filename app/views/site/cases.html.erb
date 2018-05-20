@@ -41,8 +41,11 @@
 
               <div class="one_third <%= @seletor %> at-cases-item">
                 <div class="at-cases-details">
-                  <%= image_tag(case_item.case_attachments.first.photo_url) %>
-
+                  <% if case_item.case_attachments.blank? -%>
+                  <%= image_tag("http://placehold.it/300x300?text=Sem+Imagem")%>
+                  <% else %>
+                  <%= image_tag(case_item.case_attachments.first.photo.medium.url) %>
+                  <% end %>
                   <div class="at-cases-content">
                     <span class="title"><%= case_item.title %></span>
                     <span class="categories"><%= case_item.category %></span>
