@@ -1477,7 +1477,7 @@ body:not(.home) .header_wrapper.header-style4 { position:relative; min-height: 1
 .sf-menu .iva_menuicon { margin-right: 10px;}
 
 .sf-menu { float: right; }
-.sf-menu, .sf-menu * { margin: 0; padding: 0; list-style: none; }
+.sf-menu, .sf-menu * { margin:8px 0 0 0; padding: 0; list-style: none; }
 .sf-menu li { position: relative; }
 .sf-menu ul {
 	display: none;

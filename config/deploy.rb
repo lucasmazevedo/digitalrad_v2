@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.10.2"
+
 
 set :application, "Digitalrad"
 set :repo_url, "git@github.com:lucasmazevedo/digitalrad_v2.git"
@@ -9,7 +9,8 @@ set :repo_url, "git@github.com:lucasmazevedo/digitalrad_v2.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
-set :deploy_to, "/var/www/digitalrad"
+set :deploy_to, "/home/deploy/digitalrad"
+#set :deploy_to, "/var/www/digitalrad"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

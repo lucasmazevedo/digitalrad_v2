@@ -1,0 +1,11 @@
+CREATE USER 'digitalrad'@'localhost' IDENTIFIED BY 'digital@88031406';
+GRANT ALL PRIVILEGES ON * . * TO 'digitalrad'@'localhost';
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: digitalrad_db
+  pool: 5
+  username: digitalrad
+  password: digital@88031406
+  socket: /tmp/mysql.sock

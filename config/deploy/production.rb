@@ -9,8 +9,7 @@
 
 
 set :branch, 'master'
-set :server_address, '165.227.114.163'
-
+set :server_address, 'ivangomes.ddns.net'
 ask(:password, nil, echo: false)
 server fetch(:server_address), user: "deploy", roles: %w{app db web}
 
