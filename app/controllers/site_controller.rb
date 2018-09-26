@@ -15,7 +15,7 @@ class SiteController < ApplicationController
     @companies = Company.all
 
     #Notícias
-    doc = Nokogiri::XML(open('https://pebmed.com.br/feed/'))
+    doc = Nokogiri::XML(open('http://pebmed.com.br/feed/'))
     news = Hash.from_xml(doc.to_s)
     @author = news['rss']['channel']['title']
     @link = news['rss']['channel']['link']

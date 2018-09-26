@@ -110,8 +110,11 @@
     </div>
     <div class="section_inner">
 
-      <% @companies.each do |company| %>
-      <div class="at-icon-box-v1 one_fourth">
+      <% @companies.each_with_index do |company, index| %>
+      <% if index == 3 %>
+      <% last = "last" %>
+      <% end %>
+      <div class="at-icon-box-v1 one_fourth <%= last %>">
         <%= link_to company.link, target: "_Blank", class:"at-icon__main-v1" do %>
           <p><%= image_tag(company.logo_url) %></p>
         <% end %>
